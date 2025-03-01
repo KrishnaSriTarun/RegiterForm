@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./Signup.css";
 
 function Signup() {
-      const [formData, setFormData] = useState({
+      const [Data, setData] = useState({
             name: "",
             email: "",
             phone: "",
@@ -13,15 +13,15 @@ function Signup() {
       });
 
       const handleChange = (e) => {
-            setFormData({ ...formData, [e.target.name]: e.target.value });
+            setData({ ...Data, [e.target.name]: e.target.value });
       };
 
       const handleSubmit = async (e) => {
             e.preventDefault();
             try {
-                  const response = await axios.post("http://127.0.0.1:5000/register", formData);
+                  const response = await axios.post("http://127.0.0.1:5000/register", Data);
                   toast.success(response.data.message, { position: "top-right", autoClose: 3000 });
-                  setFormData({ name: "", email: "", phone: "", city: "" });
+                  setData({ name: "", email: "", phone: "", city: "" });
 
             } catch (error) {
                   toast.error("Registration failed. Please try again.", { position: "top-right", autoClose: 3000 });
@@ -43,7 +43,7 @@ function Signup() {
                                           className="input-field"
                                           name="name"
                                           placeholder="Full Name"
-                                          value={formData.name}
+                                          value={Data.name}
                                           onChange={handleChange}
                                           required
                                     />
@@ -55,7 +55,7 @@ function Signup() {
                                           className="input-field"
                                           name="email"
                                           placeholder="Email Address"
-                                          value={formData.email}
+                                          value={Data.email}
                                           onChange={handleChange}
                                           required
                                     />
@@ -67,7 +67,7 @@ function Signup() {
                                           className="input-field"
                                           name="phone"
                                           placeholder="Phone Number"
-                                          value={formData.phone}
+                                          value={Data.phone}
                                           onChange={handleChange}
                                           required
                                     />
@@ -79,7 +79,7 @@ function Signup() {
                                           className="input-field"
                                           name="city"
                                           placeholder="City"
-                                          value={formData.city}
+                                          value={Data.city}
                                           onChange={handleChange}
                                           required
                                     />

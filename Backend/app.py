@@ -14,7 +14,8 @@ db = mysql.connector.connect(
       password=os.getenv("DB_PASSWORD"),
       database=os.getenv("DB_NAME")
 )
-cursor = db.cursor()
+cursor = db.cursor(dictionary=True)
+
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -23,6 +24,14 @@ def register():
       cursor.execute(query, (data["name"], data["email"], data["phone"], data["city"]))
       db.commit()
       return jsonify({"message": "User registered successfully!"})
+
+@app.route('/users', methods=['GET'])
+def get_users():
+    cursor.execute("SELECT * FROM users")
+    users = cursor.fetchall()
+    print(users)  # Debugging: Print to check data
+    return jsonify(users)
+
 
 if __name__ == '__main__':
       app.run(debug=True)
