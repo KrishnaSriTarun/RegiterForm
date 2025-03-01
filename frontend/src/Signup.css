@@ -1,0 +1,131 @@
+.signup-card {
+      max-width: 450px;
+      margin: 50px auto;
+      background: linear-gradient(145deg, #ffffff, #f0f0f0);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+}
+
+.signup-header {
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      padding: 25px 30px;
+      color: white;
+}
+
+.signup-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: 0.5px;
+}
+
+.signup-subtitle {
+      font-size: 14px;
+      opacity: 0.85;
+      margin: 5px 0 0;
+      font-weight: 300;
+}
+
+.signup-body {
+      padding: 30px;
+}
+
+.input-row {
+      margin-bottom: 20px;
+      position: relative;
+}
+
+.input-field {
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 50px;
+      background-color: #f8f9fa;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+}
+
+.input-field:focus {
+      outline: none;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(110, 142, 251, 0.2);
+}
+
+.input-field::placeholder {
+      color: #9ca3af;
+}
+
+.input-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9ca3af;
+}
+
+.input-field.with-icon {
+      padding-left: 45px;
+}
+
+.submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 10px;
+      box-shadow: 0 4px 15px rgba(110, 142, 251, 0.4);
+}
+
+.submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 15px rgba(110, 142, 251, 0.5);
+}
+
+.submit-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 15px rgba(110, 142, 251, 0.4);
+}
+
+.input-label {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 15px;
+      color: #9ca3af;
+      pointer-events: none;
+      transition: all 0.3s;
+}
+
+.input-field:focus+.input-label,
+.input-field:not(:placeholder-shown)+.input-label {
+      top: 0;
+      left: 15px;
+      font-size: 12px;
+      background-color: white;
+      padding: 0 5px;
+      color: #6e8efb;
+}
+
+@media (max-width: 500px) {
+      .signup-card {
+            margin: 20px auto;
+            width: 90%;
+      }
+
+      .signup-header {
+            padding: 20px;
+      }
+
+      .signup-body {
+            padding: 20px;
+      }
+}
