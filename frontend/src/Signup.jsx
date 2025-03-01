@@ -33,7 +33,6 @@ function Signup() {
                   <ToastContainer />
                   <div className="signup-header">
                         <h2 className="signup-title">Create Account</h2>
-                        <p className="signup-subtitle">Join our community today</p>
                   </div>
 
                   <div className="signup-body">
